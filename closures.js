@@ -68,13 +68,20 @@ makeCall("435-215-9248");
 properly. */
 
 //Code Here
+function makeCounter() {
+  var counter = 0;
+  return function() {
+    counter++;
+    return counter;
+  }
+}
 
-//Uncomment this once you make your function
-//   var count = makeCounter();
-//   count(); // 1
-//   count(); // 2
-//   count(); // 3
-//   count(); // 4
+// Uncomment this once you make your function
+  var count = makeCounter();
+  count(); // 1
+  count(); // 2
+  count(); // 3
+  count(); // 4
 
 
 
