@@ -132,19 +132,21 @@ counter = counterFactory(10);
 /* Inside the motivation function create another function called message that
 will return 'You're doing awesome, keep it up firstname lastname.' */
 
-function motivation(firstname, lastname){
+function motivation(firstName, lastName){
 
   var welcomeText = 'You\'re doing awesome, keep it up ';
 
   // code message function here.
-
+function message() {
+  return welcomeText + firstName + " " + lastName;
+}
 
   //Uncommment this to return the value of your invoked message function
-  //return message();
+  return message();
 
 }
 
-motivation('Billy', 'Bob'); // 'Your doing awesome keep it up Billy Bob
+motivation('Billy', 'Bob'); // 'Your doing awesome, keep it up Billy Bob
 
 
 
