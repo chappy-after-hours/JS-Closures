@@ -106,14 +106,22 @@ the module pattern to achieve this. */
 function counterFactory(value) {
 
   // Code here.
-
+  var currentValue = value;
 
   return {
+    inc: function inc() {
+      return ++currentValue;
+    },
+    dec: function dec() {
+      return --currentValue;
+    }
   }
 }
 
 
 counter = counterFactory(10);
+counter.inc();
+counter.dec();
 
 
 
@@ -138,7 +146,7 @@ function motivation(firstName, lastName){
 
   // code message function here.
 function message() {
-  return welcomeText + firstName + " " + lastName;
+  return welcomeText + firstName + " " + lastName+".";
 }
 
   //Uncommment this to return the value of your invoked message function
@@ -182,12 +190,15 @@ var module = (function() {
 
   return {
     // Code here.
+    publicMethod: function () {
+      return privateMethod();
+    }
   };
 
 })();
 
 // Uncomment this after you create your public method
-//   module.publicMethod();
+  module.publicMethod();
 
 
 
