@@ -222,13 +222,13 @@ then 3, etc). Run this code in your console to see what the output is. */
 function timeOutCounter() {
 
   for (var i = 0; i <= 5; i++) {
-    setTimeout(function() {
-      console.log(i);
-    }, i * 1)
+    setTimeout(newScope(i), i * 1000)
   }
 
   function newScope(i) {
-    console.log(i)
+    return function () {
+      console.log(i)
+    }
   }
 }
 timeOutCounter();
